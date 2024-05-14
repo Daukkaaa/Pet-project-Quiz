@@ -6,15 +6,14 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #3c1e9e;
     font-family: "Reddit Sans", sans-serif;
 }
 
 .header {
-    padding: 40px;
-    background-color: rgb(41, 100, 202);
+    padding: 20px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 a {
@@ -26,73 +25,182 @@ a {
 
 main {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 580px;
+    padding: 40px 50px;
+    margin: auto;
+    gap: 20px;
+    color: #3c1e9e;
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: 600
+}
+
+.card ul li{
+    display: flex;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgb(41, 100, 202);
+    padding: 15px 0;
+    padding-left: 15px;
+    background-color: #fff;
+    border: 1px solid #3c1e9e;
+    color: #3c1e9e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card ul li:hover {
+    transform: scale(1.02);
+}
+
+.next-button {
+    padding: 10px 100px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #3c1e9e;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #7450ea;
+    transform: scale(1.02);
+}
+
+.index {
+    font-size: 18px;
+    margin: auto;
+}
+
+.card .correct {
+    background-color: #dffff2;
+    border-color: #00d397;
+}
+
+.card .wrong {
+    background-color: #ffebeb;
+    border-color: #ff4a4a;
+}
+
+
+
+
+
+
+
+
+
+/*
+.card {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(41, 100, 202);
     border-radius: 20px;
-    max-width: 600px;
+    box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    padding: 40px 40px;
+    margin: 20px;
 }
 
 .card-title {
-    display: flex;
-    justify-content: flex-start;
+    background-color: rgb(41, 100, 202);
     color: #fff;
-    padding: 10px;
+    padding: 0 0 0px 10px;
 }
 
 .card-title h3 {
     margin: 0;
     font-size: 24px;
-    padding: 10px;
 }
 
 .answer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 20px;
+    padding: 0 20px;
 }
 
-.card p {
-    margin: 5px 0;
-    color: #333;
+.answer p {
     font-size: 18px;
-    line-height: 1.5;
-    padding: 15px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
+    background-color: #fff;
+    padding: 15px;
     border-radius: 10px;
+    margin: 15px 0;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.card p:hover {
-    transform: scale(1.01);
+.answer p:not(.correct):not(.incorrect):hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
 }
 
-.checkBtn {
+.answer-option.correct {
+    background-color: #4dbe68;
+    color: #fff;
+}
+
+.answer-option.incorrect {
+    background-color: rgb(220, 88, 88);
+    color: #fff;
+}
+
+.result-btn {
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 20px;
 }
 
-.checkAnwser {
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.next-button {
+    padding: 10px 100px;
+    font-size: 18px;
+    color: black;
     background-color: #fff;
     border: none;
-    color: black;
-    border-radius: 6px;
-    padding: 10px 150px;
-    font-size: 18px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.next-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 

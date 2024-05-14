@@ -1,28 +1,28 @@
 import React, { useState } from "react";
+import { questions } from "./Questions.js";
 
 const Card = (props) => {
-    const [isCorrect, setIsCorrect] = useState(false);
-    const [isAnswered, setIsAnswered] = useState(false);
+  const [currentQuestion, setCurrentQuention] = useState(0);
 
+  const {question, choices} = questions[currentQuestion];
+
+
+  function nextQuestion() {
+    setCurrentQuention((prev) => prev + 1)
+  }
 
   return (
-    <div className="card">
-      {props.questions.map((question) => (
-        <div key={question.id}>
-          <div className="card-title">
-            <h3>{question.id}. {question.title}</h3>
-          </div>
-          <div className="answer">
-          <p>{question.answer1}</p>
-          <p>{question.answer2}</p>
-          <p>{question.answer3}</p>
-          <p>{question.answer4}</p>
-          </div>
-          <div className="checkBtn">
-          <button className="checkAnwser" disabled={isAnswered}>Check Answer</button>
-          </div>
-        </div>
-      ))}
+    <div className="card" key={question.id}>
+      <h2>
+        {currentQuestion + 1}. {question}
+      </h2>
+      <ul>
+        {choices.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      <button onClick={nextQuestion} className="next-button">Next</button>
+      <div className="index">{1} of {questions.length} questions</div>
     </div>
   );
 };
