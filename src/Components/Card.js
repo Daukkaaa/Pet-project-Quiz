@@ -1,30 +1,78 @@
 import React, { useState } from "react";
 import { questions } from "./Questions.js";
 
-const Card = (props) => {
-  const [currentQuestion, setCurrentQuention] = useState(0);
+const Card = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const { question, choices, id, correctAnswer } = questions[currentQuestion];
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [result, setResult] = useState({
+    score: 0,
+    correctAnswers: 0,
+    wrongAnswers: 0,
+  });
+  const [showResult, setShowResult] = useState(false);
 
-  const {question, choices} = questions[currentQuestion];
+  function answerSelected(answer) {
+    setSelectedAnswer(answer);
+    if (answer === correctAnswer) {
+      setResult((prev) => ({
+        ...prev,
+        score: prev.score + 1,
+        correctAnswers: prev.correctAnswers + 1,
+      }));
+    } else {
+      setResult((prev) => ({
+        ...prev,
+        wrongAnswers: prev.wrongAnswers + 1,
+      }));
+    }
+  }
 
-
-  function nextQuestion() {
-    setCurrentQuention((prev) => prev + 1)
+  function onNextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+      setSelectedAnswer(null);
+    } else {
+      setShowResult(true);
+    }
   }
 
   return (
-    <div className="card" key={question.id}>
-      <h2>
-        {currentQuestion + 1}. {question}
-      </h2>
-      <ul>
-        {choices.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-      <button onClick={nextQuestion} className="next-button">Next</button>
-      <div className="index">{1} of {questions.length} questions</div>
+    <div className="card">
+      {showResult ? (
+        <div className="result">
+          <h2>Quiz Results</h2>
+          <p>Score: {result.score}</p>
+          <p>Correct Answers: {result.correctAnswers}</p>
+          <p>Wrong Answers: {result.wrongAnswers}</p>
+        </div>
+      ) : (
+        <>
+          <h2>{id}. {question}</h2>
+          <ul>
+            {choices.map((item) => (
+              <li
+                key={item}
+                onClick={() => answerSelected(item)}
+                className={`answer ${
+                  selectedAnswer 
+                    ? (item === correctAnswer ? "correct" : (item === selectedAnswer ? "wrong" : "")) 
+                    : ""
+                }`}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          <button onClick={onNextQuestion} className="next-button">Next</button>
+          <div className="index">{currentQuestion + 1} of {questions.length} questions</div>
+        </>
+      )}
     </div>
   );
 };
 
 export default Card;
+
+
+

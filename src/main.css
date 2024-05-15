@@ -44,10 +44,10 @@ main {
 
 .card h2 {
     font-size: 24px;
-    font-weight: 600
+    font-weight: 600;
 }
 
-.card ul li{
+.card ul li {
     display: flex;
     align-items: center;
     padding: 15px 0;
@@ -90,117 +90,26 @@ main {
 .card .correct {
     background-color: #dffff2;
     border-color: #00d397;
+    color: #00d397;
 }
 
 .card .wrong {
     background-color: #ffebeb;
     border-color: #ff4a4a;
-}
-
-
-
-
-
-
-
-
-
-/*
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(41, 100, 202);
-    border-radius: 20px;
-    box-shadow: 1px 2px 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    padding: 40px 40px;
-    margin: 20px;
-}
-
-.card-title {
-    background-color: rgb(41, 100, 202);
-    color: #fff;
-    padding: 0 0 0px 10px;
-}
-
-.card-title h3 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.answer {
-    padding: 0 20px;
-}
-
-.answer p {
-    font-size: 18px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 15px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.answer p:not(.correct):not(.incorrect):hover {
-    background-color: #e0e0e0;
-    transform: scale(1.02);
-}
-
-.answer-option.correct {
-    background-color: #4dbe68;
-    color: #fff;
-}
-
-.answer-option.incorrect {
-    background-color: rgb(220, 88, 88);
-    color: #fff;
-}
-
-.result-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
-    padding: 0 20px;
+    color: #ff4a4a;
 }
 
 .result {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+    text-align: center;
 }
 
-.next-button {
-    padding: 10px 100px;
+.result h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3c1e9e;
+}
+
+.result p {
     font-size: 18px;
-    color: black;
-    background-color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #3c1e9e;
 }
-
-.next-button:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.02);
-}
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
