@@ -6,14 +6,15 @@ const Card = () => {
   const { question, choices, id, correctAnswer } = questions[currentQuestion];
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const isAnswered = selectedAnswer !== null;
   const [result, setResult] = useState({
     score: 0,
     correctAnswer: 0,
     wrongAnswer: 0,
   });
 
+
   function answerSelected(answer) {
-    if (selectedAnswer !== null) return;
     setSelectedAnswer(answer);
     if (answer === correctAnswer) {
       setResult((prev) => ({
@@ -38,7 +39,6 @@ const Card = () => {
     }
   }
 
-
   function restartQuiz() {
     setCurrentQuestion(0);
     setSelectedAnswer(null);
@@ -49,7 +49,6 @@ const Card = () => {
       wrongAnswer: 0,
     });
   }
-
 
 
   return (
@@ -78,7 +77,7 @@ const Card = () => {
               >{item}</li>
             ))}
           </ul>
-          <button onClick={() => onNextQuestion()} className="next-button">
+          <button onClick={() => onNextQuestion()} className={`next-button ${isAnswered ? '' : "next-button-disabled"} `}>
             Next
           </button>
           <div className="index">

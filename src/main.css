@@ -138,3 +138,8 @@ main {
     background-color: #7450ea;
     transform: scale(1.02);
 }
+
+.next-button-disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
