@@ -34,3 +34,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 https://github.com/Daukkaaa/Pet-project-Quiz/assets/153117534/8cbeacff-f25b-4063-9a07-e6fd2dbe302b
 
 
+You can see this project on pet-project-quiz.vercel.app
